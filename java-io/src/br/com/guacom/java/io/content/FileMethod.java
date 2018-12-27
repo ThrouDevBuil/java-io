@@ -8,7 +8,7 @@ public class FileMethod {
 	
 	public static void main(String[] args) {
 		
-		File file = new File("arquivo.txt");
+		File file = new File("directory");
 		
 		try {
 			boolean execute = true;

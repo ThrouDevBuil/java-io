@@ -19,19 +19,20 @@ public class Exercise {
 		//Ao criar Strings que representam informações do caminho, utilizar File.separator
 		//Essa é uma constante que obtém o caractere de separador adequado do computador local.
 		
-		String target = "guacom";
-		String old = "elvis";
+		String target = "companyGuacom.txt";
+		
+		
 		
 		File file = new File("elvis.txt");
-
-		if(file.renameTo(new File(old.replace(old, target)))) {
+		File f = new File(target);
+		if(file.renameTo(f)) {
 			System.out.println("Okay!!");
 			
 		}
 		
-		System.out.println(file.getAbsolutePath());
+		System.out.println(f.getAbsolutePath());
 		
-		System.out.println(file.getCanonicalPath());
+		System.out.println(f.getCanonicalPath());
 		
 		System.out.println(file.toURL() + "\n" + file.toPath());
 		OutputStream fis = new FileOutputStream(file);

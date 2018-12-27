@@ -17,7 +17,7 @@ import java.util.Locale;
  * de computadores através de um fluxo de dados ou stream via HTTP, via socket, entre outros.
  *
  * A interface Serializable é uma interface de marcação - 
- * Só efetua a marcação dos objetos sem definir nenhuma implementação
+ * Só efetua a marcação dos objetos sem definir nenhuma implementação.
  * Ela é usada apenas para registrar a semântica de serialização para a máquina virtual Java, 
  * indicando que os objetos instanciados a partir da classe podem ser serializados (ou transformados em uma sequência de bytes).
  * 

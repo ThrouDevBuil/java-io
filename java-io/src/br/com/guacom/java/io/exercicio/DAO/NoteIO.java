@@ -1,11 +1,11 @@
 package br.com.guacom.java.io.exercicio.DAO;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +34,7 @@ public class NoteIO {
 //		BufferedReader bRead = new BufferedReader(inr);
 //		FileReader fr = new FileReader(new File(directory));
 //		BufferedReader bRead = new BufferedReader(fr);
-		try (Scanner scan = new Scanner(new FileInputStream(new File(directory)), "UTF-8")) {
+		try (Scanner scan = new Scanner(Files.newInputStream(Paths.get(directory)) ,"UTF-8")) {
 			while(scan.hasNextLine()) {
 				String nome = scan.nextLine();
 				String telefone = scan.nextLine();
@@ -95,9 +95,9 @@ public class NoteIO {
 //		FileWriter fw = new FileWriter(new File(directory), true);
 //		BufferedWriter bw = new BufferedWriter(fw);
 //		PrintStream ps = new PrintStream();
-		
+
 		//PrintWriter tem métodos de mais alto nível que já cuidam da nova linha, independente do SO.
-		try(PrintStream writer = new PrintStream(new FileOutputStream(new File(directory), true), true, "UTF-8")) {
+		try(PrintStream writer = new PrintStream(Files.newOutputStream(Paths.get(directory), StandardOpenOption.APPEND), true, "UTF-8")) {
 			writer.println(pessoa.getNome());							//Efetuando a leitura de um arquivo
 			writer.println(pessoa.getTelefone());
 			writer.println(Integer.toString(pessoa.getIdade()));

@@ -35,7 +35,10 @@ public class Pessoa {
 	}
 	
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) throws NullPointerException {
+		
+		if(obj == null)
+			throw new NullPointerException("Objeto não foi cadastrado!");
 		
 		if(!(obj instanceof Pessoa))
 			return false;
